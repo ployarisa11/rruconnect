@@ -10,7 +10,7 @@ const db = admin.firestore();
 const https = require('https');
 process.env.DEBUG = "dialogflow:debug"; // enables lib debugging statements
 
-
+const req = require('request');
 
 
 exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, response) => {
@@ -10763,13 +10763,38 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
       agent.add(text);
     }
   
+   function pushMessage(message){
+        req({
+            method: 'POST',
+            uri: 'https://notify-api.line.me/api/notify',
+            header:{
+                'Content-Type': 'application/x-www-form-urlencoded',
+
+            },
+            auth: {
+                bearer:'GU1WHyUZz9MopIWb4Z7g1soJT7dkuVUMAO3Drjhvy4y'
+            },
+            form:{
+                message:message,
+            },
+        },(err, httpResponse,body) =>{
+            if(err){
+                
+            }else{
+                    
+            }
+        
+        });
+
+    }
   
     function Default_Fallback_Intent(agent) {
      
 		
         let text = request.body.queryResult.queryText;
       	let user_id = request.body.originalDetectIntentRequest.payload.data.source.userId;
-      
+
+
       
   		 
 
@@ -10779,7 +10804,8 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
         if (text.search(c) !== -1) {
             agent.add("Correct");
         } else {
-            agent.add();
+          pushMessage("ออกสักที");
+            agent.add(user_id);
         }
     }
 
