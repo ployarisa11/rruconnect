@@ -11,9 +11,16 @@ const https = require('https');
 process.env.DEBUG = "dialogflow:debug"; // enables lib debugging statements
 
 const req = require('request');
+const express = require('express');
+const app = express();
+app.use( express.json() );
 
+app.get('/', (req, res) => processWebhook( req, res ));
 
-exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, response) => {
+app.listen(3000, () => console.log('App listening on port 3000!'));
+
+var processWebhook = function( request, response ){
+
  
     const agent = new WebhookClient({ request, response });
     const payload = {
