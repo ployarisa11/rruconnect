@@ -1,18 +1,32 @@
 {
-  "name": "webhook-dialogflow",
+  "name": "line-notify-api",
   "version": "1.0.0",
-  "description": "",
+  "description": "Javascript Line Notify",
   "main": "index.js",
   "dependencies": {
-    "actions-on-google": "^2.7.0",
-    "body-parser": "^1.19.0",
-    "dialogflow-fulfillment": "^0.6.1",
+    "@line/bot-sdk": "^6.8.4",
     "express": "^4.17.1",
-    "morgan": "^1.9.1"
+    "node-cron": "^2.0.3",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.5"
   },
-  "devDependencies": {},
-  "scripts": {
-    "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/albertoanggi/js-line-notify.git"
+  },
+  "keywords": [
+    "LINE",
+    "API",
+    "notify"
+  ],
+  "author": "Anggi Alberto",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/albertoanggi/js-line-notify/issues"
+  },
+  "homepage": "https://github.com/albertoanggi/js-line-notify#readme",
+  "devDependencies": {
+    "@types/firebase": "^3.2.1",
+    "firebase": "^7.8.0"
   }
 }
