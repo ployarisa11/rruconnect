@@ -10,8 +10,12 @@
     "request": "^2.88.0",
     "request-promise": "^4.2.5"
   },"engines": {
-    "node": "0.8.8",
-    "npm": "1.2.14"
+    "node": "6.11.1",
+    "npm": "3.10.8"
+  },
+  "scripts": {
+    "start": "node index.js"
+    
   },
   "repository": {
     "type": "git",
