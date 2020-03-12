@@ -14,15 +14,5 @@
   "scripts": {
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/siriphonNott/webhook-dialogflow.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/siriphonNott/webhook-dialogflow/issues"
-  },
-  "homepage": "https://github.com/siriphonNott/webhook-dialogflow#readme"
+  }
 }
